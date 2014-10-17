@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>iThamor- Money Transfer</title>
+
+    <!-- Bootstrap Core CSS - Uses a custom bootstrap template made with Bootswachtr -->
+    <link href="css/bootstrap2.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- CSS Animations -->
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- CSS Select Formatting -->
+    <link href="css/bootstrap-select.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body id="page-top" class="index">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#page-top">Name</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="btn-send-money" >
+                          <form action="#">
+                           <button class="btn btn-primary btn-lg navbar-btn fadeIn animated"><i class="fa fa-send-o"></i> Send Money</button>
+                       </form>
+                   </li>
+                   <li class="nav-link">
+                      <a href="#" data-toggle="modal" data-target="#registerModal">Register</a>
+                  </li>
+                  <li class="nav-link">
+                    <a href="#about" data-toggle="modal" data-target="#loginModal">Login</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+                <li class="chat">
+                    <a href="#chat"><img src="img/chat.svg"> </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-offset-2 fadeIn animated">
+                <div class="intro-text">
+                   <form action="#" id="countryForm" method="post" class="form-inline">
+                      <div class="form-group col-lg-6 col-md-offset-1 form-group-lg">
+                          <h1 class="send-money padding-sm">Where would you like to send money?</h1>
+                          <select class="form-control selectpicker" data-style="btn-default" id="country">
+                            <option>PLEASE CHOOSE A COUNTRY</option>
+                            <option>Sri Lanka</option>
+                            <option>India</option>
+                            <option>London</option>
+                            <option>Paris</option>
+                            <option>Phillipines</option>
+                          </select>
+                            
+                    </div> <br/>
+                    <div class="form-group col-lg-8">
+                        <h2 class="amount padding-sm">How much would you like to send?</h2>
+                        <div class="input-group col-lg-3">
+                            <input type="text" class="form-control" name="amount">
+                            <span class="input-group-addon">CAD</span> 
+
+                        </div>
+                          <div class="input-group"><i class="fa fa-arrow-right" style="font-size:2em"></i>  </div>
+                        <div class="input-group col-lg-3">
+                            <input class="form-control" type="text" name="conv-amount" disabled="true">
+                            <span class="input-group-addon">INR</span> 
+                        </div>
+                    </div> 
+                    <!-- HIDDEN and shown on ERROR -->
+                    <div class="form-group has-error has-feedback col-lg-8" style="display:none">
+                      <label class="control-label" for="inputError2">Input with error</label>
+                    </div>
+                    <!-- HIDDEN and updated upon entry into name="amount" -->
+                    <p id="exchange-rate" class="exchange-rate padding-md col-lg-8"> The current exchange rate is 1CAD = 50INR </p>
+                    <div class="form-group col-lg-8">
+                        <div id="output" class="col-md-4 col-md-offset-4 padding-md"> 
+                            <button class="btn btn-primary btn-lg btn-cta fadeIn animated">Get Started <br/> 
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+<!-- How It Works Section -->
+<section id="how-it-works" >
+
+    <!-- Track Transaction -->
+
+    <div class="row" >
+    <div id="track-outer" class="col-md-12">
+    <div id="track">
+       <img src="img/how-it-works/track/truck.svg" style="float:right">
+        <div id="track-inner">
+             <form id="form-register" method="post" class="form-horizontal" >
+            <div class="form-group">
+                 <label class="col-md-2 control-label">Track Transaction:</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" name="pin" placeholder="Please Enter your transaction ID."/>
+                  </div>
+                  <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary"> <i class="fa fa-chevron-right" style="font-size:2em"></i></button>
+                  </div>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center img-centered">
+                <h2>How it Works</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="col-sm-3 panel panel-primary text-center">
+         
+                    <img src="img/how-it-works/coin.svg" class="img-responsive img-centered" alt="">
+                    <h4 class="padding-sm">Amount to Send </h4>
+                    <p> Tell us how much and where you want to send the money.</p>
+              
+            </div>
+            <div class="col-sm-3  panel panel-primary portfolio-item text-center">
+                    <img src="img/how-it-works/person.svg" class="img-responsive img-centered" alt="">
+                    <h4 class="padding-sm">Person To Recieve </h4>
+                    <p>We also need to know a bit about who is on the other end.</p>
+               
+            </div>
+            <div class="col-sm-3 panel panel-primary portfolio-item text-center">             
+                    <img src="img/how-it-works/track.svg" class="img-responsive img-centered" alt="">
+                    <h4 class="padding-sm">Pay & Send</h4>
+                    <p> Relax! We will keep you posted via SMS. You can track it too</p>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>What People Say</h2>
+                <div id="map" class="fadeIn animated"> <img src="img/Map/map.svg" > </div>
+
+            </div>
+        </div>
+            <!--<div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Download Theme
+                    </a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Nameofcompany in the Media</h2>
+                    <div class="col-md-2">
+                        <ul class="list-group col-md-offset-2">
+                            <li class="list-group-item">
+                                <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li class="">
+                            <li class="list-group-item">
+                                <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+               
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+          
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Your Website 2014
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- LogIn -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title padding-sm">Login</h4>
+        </div>
+
+        <div class="modal-body">
+            <!-- The form is placed inside the body of modal -->
+            <form id="loginForm" method="post" class="form-horizontal">
+               <div class="form-group">
+                 <label class="col-md-3 control-label">Username</label>
+                 <div class="col-md-8">
+                    <input type="text" class="form-control" name="username" />
+                </div>
+            </div>
+            <div class="form-group">
+             <label class="col-md-3 control-label">Password</label>
+             <div class="col-md-8">
+                <input type="password" class="form-control" name="password" />
+            </div>
+        </div>
+        <div class="form-group">
+         <div class="col-sm-offset-3 col-sm-10">
+            <div class="checkbox">
+              <label>
+                 <input type="checkbox"> Remember me
+             </label>
+         </div>
+     </div>
+ </div>
+ <div class="form-group">
+     <div class="col-md-4 col-md-offset-9">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</div>
+</form>
+<div class="row">
+<div class="col-md-12">
+    <h4 class="padding-md">Or Sign In With</h4>
+    <ul class="list-inline col-md-offset-2">
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
+        </li>
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-windows"></i></a>
+        </li class="">
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
+        </li>
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-yahoo"></i></a>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Register Modal-->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title padding-sm">Register</h4>
+    </div>
+      <div class="modal-body">
+        <div class="row">
+
+          <!-- Sign Up Form -->
+          <form id="form-register" method="post" class="form-horizontal">
+            <div class="form-group">
+              <label class="col-md-3 control-label">Name</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="name" />
+              </div>
+            </div>
+            <div class="form-group">
+             <label class="col-md-3 control-label">Phone</label>
+             <div class="col-md-8">
+                <input type="password" class="form-control" name="phone" />
+             </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">E-mail</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="e-mail" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Password</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="password" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-9">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </div>
+        </form> <!-- End Sign Up Form-->
+
+
+      </div>
+
+  <!-- Confirmation (Only shown when register is clicked) -->
+  <div id="form-register-style" class="row" style="display:none;">
+  <div class="col-md-12">
+    <p> We have sent you a confirmation PIN via SMS and e-mail </p>
+     <form id="form-register" method="post" class="form-horizontal" >
+    <div class="form-group">
+          <div class="col-md-8">
+            <input type="text" class="form-control" name="pin" placeholder="Please Enter your PIN."/>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+    </form>
+
+</div>
+</div>
+
+<!-- Social Media Sign Up -->
+<div class="row">
+<div class="col-md-12">
+    <h4 class="padding-md">Or Sign In With</h4>
+    <ul class="list-inline col-md-offset-2">
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
+        </li>
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-windows"></i></a>
+        </li class="">
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
+        </li>
+        <li class="">
+            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-yahoo"></i></a>
+        </li>
+    </ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- Portfolio Modals -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Project Title</h2>
+
+                        <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                        <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                        <ul class="list-inline item-details">
+                            <li>Client:
+                                <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                </strong>
+                            </li>
+                            <li>Date:
+                                <strong><a href="http://startbootstrap.com">April 2014</a>
+                                </strong>
+                            </li>
+                            <li>Service:
+                                <strong><a href="http://startbootstrap.com">Web Development</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery Version 1.11.0 -->
+<script src="js/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/freelancer.js"></script>
+
+<!-- Custom select dropdown JavaSscript -->
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+     <script>
+         $(document).ready(function(){
+          $('.selectpicker').selectpicker({
+            size: 4
+          });
+        });
+    </script>
+</body>
+
+</html>
