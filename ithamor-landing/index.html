@@ -117,10 +117,10 @@
                             <span class="input-group-addon">CAD</span> 
 
                         </div>
-                          <div class="input-group mobile-hidden"><i class="fa fa-arrow-right" style="font-size:2em"></i>  </div>
+                          <div class="input-group hidden-xs hidden-sm"><i class="fa fa-arrow-right" style="font-size:2em"></i>  </div>
                         <div class="input-group col-lg-3">
                             <input class="form-control" type="text" name="conv-amount" disabled="true">
-                            <span class="input-group-addon">INR</span> 
+                            <span id="currency-sym" class="input-group-addon">CAD</span> 
                         </div>
                     </div> 
                     <!-- HIDDEN and shown on ERROR -->
@@ -144,10 +144,10 @@
 </div>
 </header>
 
-<!-- How It Works Section -->
-<section id="how-it-works"  >
 
-    <!-- Track Transaction -->
+<!-- Track Transaction -->
+<section class="padding-sm">
+
 
     <div class="row" >
     <div id="track-outer" class="col-md-12">
@@ -170,9 +170,10 @@
         </div>
     </div>
 
+</section>
 
-
-
+<!-- How It Works Section -->
+<section id="how-it-works"  >
     <div class="container wow fadeIn">
         <div class="row">
             <div class="col-lg-12 text-center img-centered">
@@ -183,19 +184,19 @@
             <div class="col-lg-12 col-lg-offset-1">
             <div class="col-sm-3 panel panel-primary text-center">
          
-                    <img src="img/how-it-works/coin.svg" class="img-responsive img-centered" alt="">
+                    <img src="img/how-it-works/coin.svg" class="hover-animate img-responsive img-centered" alt="">
                     <h4 class="padding-sm">Amount to Send </h4>
                     <p> Tell us how much and where you want to send the money.</p>
               
             </div>
-            <div class="col-sm-3  panel panel-primary portfolio-item text-center">
-                    <img src="img/how-it-works/person.svg" class="img-responsive img-centered" alt="">
+            <div class="col-sm-3  panel panel-primary text-center">
+                    <img src="img/how-it-works/person.svg" class="hover-animate img-responsive img-centered" alt="">
                     <h4 class="padding-sm">Person To Recieve </h4>
                     <p>We also need to know a bit about who is on the other end.</p>
                
             </div>
-            <div class="col-sm-3 panel panel-primary portfolio-item text-center">             
-                    <img src="img/how-it-works/track.svg" class="img-responsive img-centered" alt="">
+            <div class="col-sm-3 panel panel-primary text-center">             
+                    <img src="img/how-it-works/track.svg" class="hover-animate img-responsive img-centered" alt="">
                     <h4 class="padding-sm">Pay & Send</h4>
                     <p> Relax! We will keep you posted via SMS. You can track it too</p>
                
@@ -210,8 +211,40 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>What People Say</h2>
-                <div id="map" class="wow fadeIn"> <img src="img/Map/map.svg" > </div>
+                <h2 class='padding-sm'>What People Say</h2>
+                <p> Customers all over the world trust us since we deliver our promises. </p>
+                      <div class='pin'></div>
+                    <div class='pulse'></div>
+                <!-- Hidden for small and extra small screens -->
+                <div id="map" class="wow fadeIn hidden-xs hidden-sm"> 
+              
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 text-center">
+                 
+                            <img src="img/how-it-works/person.svg" class="col-sm-2  img-map img-responsive img-centered" alt="">
+                            <blockquote><p> "Lorem ipsum doleres something like that."</p></blockquote>
+                      
+                    </div>
+                    <div class="col-sm-4 text-center">
+                            <img src="img/how-it-works/person.svg" class="col-sm-2  img-map img-responsive img-centered" alt="">
+                           <blockquote><p> "Lorem ipsum doleres something like that."</p></blockquote>
+                       
+                    </div>
+                    <div class="col-sm-4 text-center">             
+                            <img src="img/how-it-works/person.svg" class="col-sm-2 img-map img-responsive img-centered class" alt="">
+                           <blockquote><p> "Lorem ipsum doleres something like that."</p></blockquote>
+                       
+                    </div>
+         
+    </div>
+
+                <!-- Visible for small and extra small screens -->
+                <div id="testimonials" class="wow fadeIn visible-xs visible-sm"> 
+                    <a id="popover" class="btn" rel="popover" data-content="the textual content of the popover is inserted here" title="Heading">Popover button</a>
+
+                </div>
 
             </div>
         </div>
@@ -230,6 +263,74 @@
             </div> -->
         </div>
     </section>
+
+    <!-- Service Offer Section -->
+<section id="service"  >
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-lg-12 text-center img-centered">
+                <h2>Transport your money in the best way possible</h2>
+            </div>
+        </div>
+      <!--  <div class="row">
+            <div class="col-lg-12 col-lg-offset-1">
+            <div class="col-sm-3 well text-center">
+         
+                    <img src="img/product-offer/speed.svg" class="img-responsive img-centered" alt="">
+                    <h4 class="padding-sm">Fast </h4>
+                    <p> Our applications are easy to use plus we deliver quickly.</p>
+              
+            </div>
+            <div class="col-sm-3 well text-center">
+                    <img src="img/product-offer/save-money.svg" class="img-responsive img-centered" alt="">
+                    <h4 class="padding-sm"> Low-Cost </h4>
+                    <p>We have low exchange raates, and a rewards program to help you!</p>
+               
+            </div>
+            <div class="col-sm-3 well text-center">             
+                    <img src="img/product-offer/secure.svg" class="img-responsive img-centered" alt="">
+                    <h4 class="padding-sm">Safe</h4>
+                    <p> We use industry standard systems to ensure safety. </p>
+               
+            </div>
+        </div>
+    </div> -->
+
+            <ul class="ch-grid">
+            <li>
+                 <h3 class="padding-sm">Fast </h3>
+                <div class="ch-item ch-img-1">
+                   
+                    <div class="ch-info">
+                        <h3 class="padding-sm">Fast </h3>
+                    <p> Our applications are easy to use plus we deliver quickly.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h3 class="padding-sm"> Low-Cost </h3>
+                <div class="ch-item ch-img-2">
+                    
+                    <div class="ch-info">
+                    <h3 class="padding-sm"> Low-Cost </h3>
+                    <p>We have low exchange rates, and a rewards program to help you!</p>
+            
+                    </div>
+                </div>
+            </li>
+            <li>
+                 <h3 class="padding-sm">Safe</h3>
+                <div class="ch-item ch-img-3">
+                    
+                    <div class="ch-info">
+                       <h3 class="padding-sm">Safe</h3>
+                    <p> We use industry standard systems to ensure safety. </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+</div>
+</section>
 
     <!-- Media Section -->
     <section id="media">
@@ -292,12 +393,12 @@
         <div class="footer-below">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 col-lg-offset-1">
                         <ul class="list-inline">
-                            <li>About Us</li>
-                            <li>FAQ</li>
-                            <li>Feedback</li>
-                            <li>Terms and Conditions</li>  
+                            <li><a>About Us</a></li>
+                            <li><a>FAQ</a></li>
+                            <li><a>Feedback</a></li>
+                            <li><a>Terms and Conditions</a></li>  
                         </ul>
                     </div>
                 </div>
@@ -499,7 +600,18 @@
           $('.selectpicker').selectpicker({
             size: 4
           });
+
+        // handle the mouseenter functionality
+        $("img").mouseenter(function(){
+            $(this).addClass("bounce animated");
+        })
+        // handle the mouseleave functionality
+        .mouseleave(function(){
+            $(this).removeClass("bounce animated");
         });
+    
+
+    });
     </script>
 <!-- Custom viewport checker JavaSscript -->
 <script src="js/wow.min.js"></script>
@@ -519,19 +631,22 @@
  function onSelectChange() {
   var selected = $("#country option:selected");
   var output = ""; 
-  var cssValues = new Array();
-  cssValues['India'] = 'india.jpg';
-  cssValues['Sri Lanka'] = 'srilanka-01.jpg';
-  cssValues['London'] = 'london.jpg';  // same as for other values
+
+  //The picture, currency symbol and exchange rate associated with each country.
+  var countryValues = new Array();
+  countryValues['India'] = ['india.jpg', 'INR', '50.00 INR'];
+  countryValues['Sri Lanka'] = ['srilanka-01.jpg','SLR', '120.00 SLR'];
+  countryValues['London'] = ['london.jpg', 'EUR', '1.5 EUR'];  // same as for other values
   $('header').removeClass("fadeIn animated");
     if(selected.val() == 'PLEASE CHOOSE A COUNTRY'){
-      output = "You Selected " + selected.text();    
+      output = "You have not selected a country."  
       $('header').css('background', 'url(img/london.png) no-repeat fixed center center / cover  rgba(0, 0, 0, 0)');
     }
     else{
-      output = "You Selected " + selected.text();
+      output = "The current exchange rate is 1 CAD = " +  countryValues[selected.val()][2];
       $("header").removeClass('fadeIn animated');
-      $('header').css('background', 'url("img/'+cssValues[selected.val()]+'") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)');  
+      $('header').css('background', 'url("img/'+ countryValues[selected.val()][0]+'") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)'); 
+      $('#currency-sym').text( countryValues[selected.val()][1]) 
       setTimeout(function(){
             $("header").addClass('fadeIn animated');
             $(".step-2").css('visibility', 'visible');

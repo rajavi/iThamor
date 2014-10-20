@@ -6,6 +6,10 @@
   font-family: HelveticaBoldCond;
   src: url(../fonts/HelveticaLTStd-BoldCond.otf);
 }
+@font-face {
+  font-family: DolceVitaLight;
+  src: url('../fonts/Dolce Vita.ttf');
+}
 body {
   overflow-x: hidden;
   font-family: HelveticaLight, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -30,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: DolceVitaLight, HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   padding-bottom: 30px;
 }
@@ -76,6 +80,35 @@ label {
 .padding-lg {
   padding: 30px;
 }
+.navbar {
+  font-family: DolceVitaLight, HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.navbar a:focus {
+  outline: none;
+}
+.navbar .navbar-nav {
+  letter-spacing: 1px;
+}
+.navbar .navbar-nav li a:focus {
+  outline: none;
+}
+.navbar-default,
+.navbar-inverse {
+  border: none;
+}
+section {
+  padding: 100px 0;
+  background: #fff;
+}
+section h2 {
+  margin: 0;
+  font-size: 3em;
+  color: #0073c6;
+}
+section.grey {
+  background: #f4f1ef;
+}
 .dropdown-menu {
   background-color: #fff;
 }
@@ -108,67 +141,32 @@ header .intro-text .step-2 {
 }
 header .intro-text .send-money {
   display: block;
-  font-family: HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: DolceVitaLight, HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 2em;
 }
 header .intro-text .amount-heading,
 header .intro-text .btn-cta {
-  font-family: HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: DolceVitaLight, HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   font-weight: 300;
 }
-.navbar {
-  font-family: HelveticaBoldCond, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-.navbar a:focus {
-  outline: none;
-}
-.navbar .navbar-nav {
-  letter-spacing: 1px;
-}
-.navbar .navbar-nav li a:focus {
-  outline: none;
-}
-.navbar-default,
-.navbar-inverse {
-  border: none;
-}
-section {
-  padding: 100px 0;
-  background: #fff;
-}
-section h2 {
-  margin: 0;
-  font-size: 3em;
-  color: #0073c6;
-}
-section.grey {
-  background: #f4f1ef;
-}
-#how-it-works {
-  padding-top: 10px;
-}
-#how-it-works .container {
-  margin: 0 auto;
-}
-#how-it-works #track-outer {
+#track-outer {
   background: url("../img/how-it-works/track/road.svg");
   height: 110px;
   padding-bottom: 75px;
 }
-#how-it-works #track {
+#track {
   position: absolute;
   width: 110px;
   height: 110px;
   margin-top: 10px;
-  -webkit-transition-duration: 2s;
-  -moz-transition-duration: 2s;
-  transition-duration: 2s;
-  -o-transition-duration: 2s;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
 }
-#how-it-works #track #track-inner {
+#track #track-inner {
   position: absolute;
   width: 100%;
   margin-top: 10px;
@@ -181,15 +179,56 @@ section.grey {
   text-align: left;
   padding-bottom: 10px;
 }
-#how-it-works #track:hover {
+#track:hover {
   width: 100%;
 }
-#how-it-works #track:hover #track-inner {
+#track:hover #track-inner {
   left: 0px;
 }
-#how-it-works .panel {
+#how-it-works {
+  padding-top: 10px;
+  background: #fcfbfa;
+}
+#how-it-works .container {
+  margin: 0 auto;
+}
+.panel {
+  background: url(../img/product-offer/back-grain.svg);
   padding: 20px;
   margin: 20px;
+  border: none;
+}
+#map {
+  background: url("../img/map/map.svg") no-repeat scroll center center;
+  margin: 0 auto;
+  min-height: 710px;
+  position: relative;
+}
+.img-map {
+  height: 30%;
+  width: 30%;
+}
+#service {
+  background: #fcfbfa;
+}
+#service .well {
+  background: url(../img/product-offer/back-grain.svg);
+  padding: 20px;
+  margin: 20px;
+}
+#service img {
+  height: 50%;
+  width: 50%;
+}
+#media {
+  background: url(../img/puzzle-01.svg) no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
 }
 ul.divider-vertical {
   list-style-type: none;
@@ -356,9 +395,6 @@ footer .footer-below {
     display: block;
     width: 100%;
   }
-  .mobile-hidden {
-    display: none;
-  }
   #track {
     width: 100%;
   }
@@ -373,4 +409,94 @@ footer .footer-below {
   section.first {
     padding-top: 75px;
   }
+}
+.ch-grid {
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.ch-grid:after,
+.ch-item:before {
+  content: '';
+  display: table;
+}
+.ch-grid:after {
+  clear: both;
+}
+.ch-grid li {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  margin: 20px;
+}
+.ch-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: default;
+  box-shadow: inset 0 0 0 0 rgba(60, 89, 110, 0.6), inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+.ch-img-1 {
+  background-image: url(../img/product-offer/fast.jpg);
+  background-position: center;
+}
+.ch-img-2 {
+  background-image: url(../img/product-offer/money-saving-tips.jpg);
+  background-position: center;
+}
+.ch-img-3 {
+  background-image: url(../img/product-offer/secure.jpg);
+  background-position: center;
+}
+.ch-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  transform: scale(0);
+  backface-visibility: hidden;
+}
+.ch-info h3 {
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  margin: 0 30px;
+  padding: 65px 0 0 0;
+  height: 110px;
+  text-shadow: 0 0 1px #ffffff, 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.ch-info p {
+  color: #fff;
+  padding: 10px 5px;
+  margin: 0 30px;
+  font-size: 1.3em;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.ch-info p a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding-top: 4px;
+}
+.ch-info p a:hover {
+  color: rgbargba(60, 89, 110 0.8);
+}
+.ch-item:hover {
+  box-shadow: inset 0 0 0 200px rgba(60, 89, 110, 0.6), inset 0 0 0 16px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0);
+}
+.ch-item:hover .ch-info {
+  opacity: 1;
+  transform: scale(1);
 }
