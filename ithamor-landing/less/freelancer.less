@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 	//text-transform: uppercase;
 	font-weight: 400;
 	padding-bottom: 30px;
+	color:@brand-success;
 }
 label{
 	text-transform: uppercase;
@@ -51,7 +52,7 @@ label{
     *display: inline; /* IE7 hack */
     *zoom: 1; /* IE7 hack */
     width: 20%;
-    margin-right:2%;
+    margin:1%;
 	}
 }
 
@@ -144,12 +145,14 @@ header {
 			//text-transform: uppercase;
 			font-weight: 400;
 			font-size: 2em;
+			color: white;
 
 		}
 		.amount-heading, .btn-cta {
 			font-family: @font-family-bold-cond;
 			font-size: 1.5em;
 			font-weight: 300;
+			color: white;
 		}
 
 	
@@ -158,6 +161,7 @@ header {
 
 	#track-outer{
  		background: url("../img/how-it-works/track/road.svg");
+ 		background-position: bottom;
  		height:110px; 
  		padding-bottom: 75px;
  	}
@@ -206,10 +210,12 @@ header {
  	}
 
 	.panel{
-	background: url(../img/product-offer/back-grain.svg);
+	  background: inherit;
 	  padding: 20px;
 	  margin: 20px;
-	  border:none;
+	  border: 0.5px line;
+	  border-color: #333;
+
 	}
 
 
@@ -335,13 +341,15 @@ footer {
 	display: inline-block;
 	height: 70px;
 	width: 70px;
-	border: 2px solid white;
+	border: 2px solid @brand-success;
 	border-radius: 1%;
 	text-align: center;
 	font-size: 30px;
-	font-color: white;
+	font-color: @brand-success;
+	color: @brand-success;
 	line-height: 65px;
-	background: #333;
+	background: #FFF;
+	border-radius: 100%;
 
 }
 
@@ -391,7 +399,7 @@ footer {
 
 @media(min-width:768px) {
     .navbar-fixed-top {
-        padding: 20px 0;
+        padding: 10px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
@@ -406,7 +414,7 @@ footer {
 		}
     }
     .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
+        padding: 5px 0;
 		.navbar-brand {
 	        font-size: 1.5em;
 	    }
@@ -442,13 +450,27 @@ footer {
 				width:100%;
 			}
 		}
+#track-outer{
+			width:100%;
+ 			height: 300px;
+ 			background: #FFF;
 
 	    #track{	
- 		width:100%;
+ 			width:100%;
+ 			height: 300px;
+ 		
+
 	        #track-inner{
 	        	left:0px;
+	        	height: 300px;
+
+	        	button:
+	        	float: right;
+	      
+
 	        }
  		}
+ 	}
  	
 	}
 
@@ -498,7 +520,7 @@ footer {
     position: relative;
     cursor: default;
     box-shadow: 
-        inset 0 0 0 0 rgba(60, 89, 110, 0.6),
+        inset 0 0 0 0 rgba(255,255,255, 0.6),
         inset 0 0 0 16px rgba(255,255,255,0.6),
         0 1px 2px rgba(0,0,0,0.1);
     transition: all 0.4s ease-in-out;
@@ -532,7 +554,6 @@ footer {
 }
 
 .ch-info h3 {
-    color: #fff;
     text-transform: uppercase;
     position: relative;
     letter-spacing: 2px;
@@ -540,36 +561,22 @@ footer {
     margin: 0 30px;
     padding: 65px 0 0 0;
     height: 110px;
+    color: #333;
     text-shadow: 
         0 0 1px #fff, 
         0 1px 2px rgba(0,0,0,0.3);
 }
  
 .ch-info p {
-    color: #fff;
     padding: 10px 5px;
     margin: 0 30px;
     font-size: 1.3em;
     border-top: 1px solid rgba(255,255,255,0.5);
 }
  
-.ch-info p a {
-    display: block;
-    color: rgba(255,255,255,0.7);
-    font-style: normal;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 9px;
-    letter-spacing: 1px;
-    padding-top: 4px;
-}
- 
-.ch-info p a:hover {
-    color: rgbargba(60, 89, 110 0.8);
-}
 .ch-item:hover {
     box-shadow: 
-      inset 0 0 0 200px rgba(60, 89, 110, 0.6),     
+      inset 0 0 0 200px rgba(255,255,255, 0.6),     
       inset 0 0 0 16px rgba(255,255,255,0.9),
        0 1px 2px rgba(0,0,0.1,0);
 }
