@@ -15,7 +15,7 @@
     <link href="css/bootstrap2.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- CSS Animations -->
     <link href="css/animate.css" rel="stylesheet">
@@ -64,48 +64,51 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li id="btn-send-money" >
                           <form action="#">
-                           <div class="btn-group">
-                              <button type="button" class="btn btn-primary btn-lg navbar-btn fadeIn animated"><i class="fa fa-send-o"></i> Send Money</button>
-                              <button type="button" class="btn btn-primary btn-lg navbar-btn fadeIn animated dropdown-toggle" data-toggle="dropdown">
+
+                            <!-- Send Money Button appears on nav-shrink, not visible in mobile screens -->
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-primary btn-lg navbar-btn fadeIn animated hidden-xs hidden-sm"><i class="fa fa-send-o"></i> Send Money</button>
+                              <button type="button" class="btn btn-primary btn-lg navbar-btn fadeIn animated dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
                                 <span class="caret"></span>
                                 <span class="sr-only">Toggle Dropdown</span>
-                              </button>
-                              <ul class="dropdown-menu" role="menu">
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
-                              </ul>
-                            </div>
-                       </form>
-                   </li>
-                   <li class="nav-link">
-                      <a href="#" data-toggle="modal" data-target="#registerModal">Register</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#about" data-toggle="modal" data-target="#loginModal">Login</a>
+                            </ul>
+                        </div>
+
+                    </form>
                 </li>
-                <li class="dropdown nav-link">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-                <li class="chat">
-                    <a href="#chat"><img src="img/chat.svg"> </a>
-                </li>
+                <li class="nav-link">
+                  <a href="#" data-toggle="modal" data-target="#registerModal">Register</a>
+              </li>
+              <li class="nav-link">
+                <a href="#about" data-toggle="modal" data-target="#loginModal">Login</a>
+            </li>
+            <li class="dropdown nav-link">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
             </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
+        </li>
+        <li class="chat">
+            <a href="#chat"><img class="jump" src="img/chat.svg"> </a>
+        </li>
+    </ul>
+</div>
+<!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
 </nav>
 
 <!-- Header -->
@@ -114,21 +117,21 @@
         <div class="row">
             <div class="col-lg-12 col-md-offset-2">
                 <div class="intro-text">
-                   <form action="#" id="form-init" method="post" class="form-inline">
-                      <div class="form-group col-lg-6 col-md-offset-1 form-group-lg">
-                          <h1 class="send-money padding-sm">Where would you like to send money?</h1>
-                          <select class="form-control selectpicker" data-style="btn-default" id="country">
-                            <option>PLEASE CHOOSE A COUNTRY</option>
-                            <option>Sri Lanka</option>
-                            <option>India</option>
-                            <option>London</option>
-                            <option>Paris</option>
-                            <option>Phillipines</option>
-                          </select>
-                            
-                    </div> <br/>
-                    <!-- HIDDEN appears on selection of country -->
-                    <div class="step-2">
+                 <form action="#" id="form-init" method="post" class="form-inline">
+                  <div class="form-group col-lg-6 col-md-offset-1 form-group-lg">
+                      <h1 class="send-money padding-sm">Where would you like to send money?</h1>
+                      <select class="form-control selectpicker" data-style="btn-default" id="country">
+                        <option>PLEASE CHOOSE A COUNTRY</option>
+                        <option>Sri Lanka</option>
+                        <option>India</option>
+                        <option>London</option>
+                        <option>Paris</option>
+                        <option>Phillipines</option>
+                    </select>
+
+                </div> <br/>
+                <!-- HIDDEN appears on selection of country -->
+                <div class="step-2 ">
                     <div class="form-group col-lg-8">
                         <h2 class="amount-heading padding-sm">How much would you like to send?</h2>
                         <div class="input-group col-lg-3">
@@ -141,8 +144,11 @@
                             <span id="currency-sym" class="input-group-addon">CAD</span> 
                         </div>
                     </div> 
-                    
-                  
+                       <!-- #messages is where the messages are placed inside -->
+       
+        
+                    <p id="messages" class="exchange-rate padding-sm col-lg-8"> </p>
+
                     <p id="exchange-rate" class="exchange-rate padding-sm col-lg-8"> </p>
                     <div class="form-group col-lg-8">
                         <div id="output" class="col-md-4 col-md-offset-4 padding-md"> 
@@ -150,13 +156,13 @@
                             </button>
                         </div>
                     </div>
-                  </div>
+                </div>
 
-                </form>
+            </form>
 
-            </div>
         </div>
     </div>
+</div>
 </div>
 </header>
 
@@ -164,26 +170,30 @@
 <!-- Track Transaction -->
 <section class="grey padding-sm">
     <div class="row wow fadeIn" >
-    <div id="track-outer">
+        <div id="track-outer">
             <h4 class="padding-md text-center col-md-12"> We have transaction tracking so you dont have to worry!</h4>
-    <div id="track">
-       <img src="img/how-it-works/track/truck.svg" style="float:right">
-        <div id="track-inner">
-            <form id="form-track" method="post" class="form-horizontal" >
-            <div class="form-group">
-                 <label class="col-md-2 control-label"><h4 class="padding-sm"> Track Transaction: </h4></label>
-                    <div class="col-md-8">
-                    <input type="text" class=" padding-md form-control" name="transid" placeholder="Please Enter your transaction ID."/>
-                  </div>
-                  <div class="col-md-1" >
-                    <button type="submit" class="btn btn-primary" > <i class="fa fa-chevron-right" style="font-size:2em"></i></button>
-                  </div>
+            <div id="track">
+             <img src="img/how-it-works/track/truck.svg" style="float:right">
+             <div id="track-inner">
+                <form id="form-track" method="post" class="form-horizontal" >
+                    <div class="form-group">
+                       <label class="col-md-2 control-label"><h4 class="padding-sm"> Track Transaction: </h4></label>
+                       <div class="col-md-8">
+                        <input type="text" class=" padding-md form-control" name="transid" placeholder="Please Enter your transaction ID."/>
+                    </div>
+                    <div class="col-md-1" >
+                        <button type="submit" class="btn btn-primary" > <i class="fa fa-chevron-right" style="font-size:2em"></i></button>
+                    </div>
                 </div>
             </form>
         </div>
-        </div>
-        </div>
     </div>
+    <!-- Track Transaction button visible for small and extra-small screens -->
+    <div class="col-md-4 fadeIn animated text-center visible-xs visible-sm"> 
+        <button type="button" class="btn btn-primary btn-lg "><i class="fa fa-history"></i> Track Transaction </button>
+    </div>
+</div>
+</div>
 </section>
 
 <!-- How It Works Section -->
@@ -196,28 +206,28 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-lg-offset-1">
-            <div class="col-sm-3 panel panel-primary text-center">
-         
-                    <img src="img/how-it-works/coin.svg" class="hover-animate img-responsive img-centered" alt="">
+                <div class="col-sm-3 panel panel-primary text-center">
+
+                    <img src="img/how-it-works/coin.svg" class=" img-responsive img-centered jump" alt="">
                     <h4 class="padding-sm">Amount to Send </h4>
                     <p> Tell us how much and where you want to send the money.</p>
-              
-            </div>
-            <div class="col-sm-3  panel panel-primary text-center">
-                    <img src="img/how-it-works/person.svg" class="hover-animate img-responsive img-centered" alt="">
+
+                </div>
+                <div class="col-sm-3  panel panel-primary text-center">
+                    <img src="img/how-it-works/person.svg" class="img-responsive img-centered jump" alt="">
                     <h4 class="padding-sm">Person To Recieve </h4>
                     <p>We also need to know a bit about who is on the other end.</p>
-               
-            </div>
-            <div class="col-sm-3 panel panel-primary text-center">             
-                    <img src="img/how-it-works/track.svg" class="hover-animate img-responsive img-centered" alt="">
+
+                </div>
+                <div class="col-sm-3 panel panel-primary text-center">             
+                    <img src="img/how-it-works/track.svg" class=" img-responsive img-centered jump" alt="">
                     <h4 class="padding-sm">Pay & Send</h4>
                     <p> Relax! We will keep you posted via SMS. You can track it too</p>
-               
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- Map Section -->
@@ -227,32 +237,32 @@
             <div class="col-lg-12 text-center">
                 <h2 class='padding-sm'>What People Say</h2>
                 <p> Customers all over the world trust us since we deliver our promises. </p>
-                      <div class='pin'></div>
-                    <div class='pulse'></div>
+                <div class='pin'></div>
+                <div class='pulse'></div>
                 <!-- Hidden for small and extra small screens -->
                 <div id="map" class="wow fadeIn hidden-xs hidden-sm"> 
-              
+
 
                 </div>
                 <div class="row">
                     <div class="col-sm-4 text-center">
-                 
-                            <img src="img/how-it-works/person.svg" class="col-sm-2  img-map img-responsive img-centered" alt="">
-                            <blockquote><p> <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "</small></blockquote>
-                      
+
+                        <img src="img/how-it-works/person.svg" class="col-sm-2  img-map img-responsive img-centered jump" alt="">
+                        <blockquote><p> <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "</small></blockquote>
+
                     </div>
                     <div class="col-sm-4 text-center">
-                            <img src="img/how-it-works/person.svg" class="col-sm-2  img-map img-responsive img-centered" alt="">
-                           <blockquote><p> <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  "</small></blockquote>
-                       
+                        <img src="img/how-it-works/person.svg" class="col-sm-2  img-map img-responsive img-centered jump" alt="">
+                        <blockquote><p> <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  "</small></blockquote>
+
                     </div>
                     <div class="col-sm-4 text-center">             
-                            <img src="img/how-it-works/person.svg" class="col-sm-2 img-map img-responsive img-centered class" alt="">
-                           <blockquote><p> <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "</small></p></blockquote>
-                       
+                        <img src="img/how-it-works/person.svg" class="col-sm-2 img-map img-responsive img-centered jump" alt="">
+                        <blockquote><p> <small>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "</small></p></blockquote>
+
                     </div>
-         
-                 </div>
+
+                </div>
 
             </div>
         </div>
@@ -273,134 +283,121 @@
     </section>
 
     <!-- Service Offer Section -->
-<section id="service"  >
-    <div class="container wow fadeIn">
-        <div class="row">
-            <div class="col-lg-12 text-center img-centered">
-                <h2>Send your money in the best way possible</h2>
+    <section id="service"  >
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-12 text-center img-centered">
+                    <h2>Send your money in the best way possible</h2>
+                </div>
             </div>
-        </div>
-      <!--  <div class="row">
-            <div class="col-lg-12 col-lg-offset-1">
-            <div class="col-sm-3 well text-center">
-         
-                    <img src="img/product-offer/speed.svg" class="img-responsive img-centered" alt="">
-                    <h4 class="padding-sm">Fast </h4>
-                    <p> Our applications are easy to use plus we deliver quickly.</p>
-              
-            </div>
-            <div class="col-sm-3 well text-center">
-                    <img src="img/product-offer/save-money.svg" class="img-responsive img-centered" alt="">
-                    <h4 class="padding-sm"> Low-Cost </h4>
-                    <p>We have low exchange raates, and a rewards program to help you!</p>
-               
-            </div>
-            <div class="col-sm-3 well text-center">             
-                    <img src="img/product-offer/secure.svg" class="img-responsive img-centered" alt="">
-                    <h4 class="padding-sm">Safe</h4>
-                    <p> We use industry standard systems to ensure safety. </p>
-               
-            </div>
-        </div>
-    </div> -->
 
-            <ul class="ch-grid">
-            <li>
-                 <h3 class="padding-sm">Fast </h3>
-                <div class="ch-item ch-img-1">
+            <div class="row">
+            <ul class="ch-grid col-md-12 col-md-offset-1">
+                <li class="col-md-4">
+                 <div class="ch-item ch-img-1">
+                    <h3 class="padding-sm">Fast </h3>
                     <div class="ch-info">
-                        <h3 class="padding-sm">Fast </h3>
-                    <p> Our applications are easy to use plus we deliver quickly.</p>
+                        <p> Our applications are easy to use plus we deliver quickly.</p>
                     </div>
                 </div>
             </li>
-            <li>
-                <h3 class="padding-sm"> Low-Cost </h3>
+            <li class="col-md-4">
                 <div class="ch-item ch-img-2">
-                    
-                    <div class="ch-info">
                     <h3 class="padding-sm"> Low-Cost </h3>
-                    <p>We have low exchange rates, and a rewards program to help you!</p>
-            
-                    </div>
-                </div>
-            </li>
-            <li>
-                 <h3 class="padding-sm">Safe</h3>
-                <div class="ch-item ch-img-3">
-                    
                     <div class="ch-info">
-                       <h3 class="padding-sm">Safe</h3>
-                    <p> We use industry standard systems to ensure safety. </p>
+                        <p>We have low exchange rates, and a rewards program to help you!</p>
                     </div>
                 </div>
             </li>
-        </ul>
+            <li class="col-md-4">
+             <div class="ch-item ch-img-3">
+                 <h3 class="padding-sm">Safe</h3>
+                <div class="ch-info">
+                 <p> We use industry standard systems to ensure safety. </p>
+               </div>
+           </div>
+       </li>
+   </ul>
+</div>
 </div>
 </section>
 
-    <!-- Media Section -->
-    <section id="media">
-        <div class="container wow fadeIn">
-            <div class="row">
- 
-                      <h2 class="padding-lg text-center">Nameofcompany in the Media</h2>
-                      <div class="col-lg-6">
-                      <div class=" panel panel-primary padding-md">
-                          <h4 class="padding-sm">We appeared on TV! </h4>
-                          <p> Tell them some stuff about how we apperared on TV, why people love us and more stuff like this.</p>
-                    
-                      </div>
-                
-                       <div class="panel panel-primary padding-md">
-                          <h4 class="padding-sm">We appeared on TV! </h4>
-                          <p> Tell them some stuff about how we apperared on TV, why people love us and more stuff like this.</p>
-                    
-                      </div>          
-                    
-                    </div>
-                     <div class="col-lg-1"> </div>
-                    <div class="col-md-4">
+<!-- Media Section -->
+<section id="media">
+    <div class="container wow fadeIn">
+        <div class="row">
+        <div class="col-md-12">
+         <div class="col-md-6">
+          <h3> Nameofcompany in the Media</h3>
+
+              <div class=" panel panel-primary padding-md">
+                  <h4 class="padding-sm">We appeared on TV! </h4>
+                  <p> Tell them some stuff about how we apperared on TV, why people love us and more stuff like this.</p>
+
+              </div>
+
+              <div class="panel panel-primary padding-md">
+                  <h4 class="padding-sm">We appeared on TV! </h4>
+                  <p> Tell them some stuff about how we apperared on TV, why people love us and more stuff like this.</p>
+
+              </div>          
+        </div>
+          <div class="col-md-4 col-md-offset-1 text-center">
                      <!--<div class="col-md-4">
                       <ul class="divider-vertical mobile-hidden">
                         <li><hr></li>
                         <li> <div class="circle" > CONNECT WITH US</div></li>
                         <li><hr></li>
                       </ul>  
-                    </div> -->
-                    <h3> CONNECT WITH US</h3>
-                    <div class="col-md-12">
-                        <ul class="list-inline">
-                            <li class="">
-                                <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li class="">
-                            <li class="">
-                                <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-               
-                        </ul>
-                    </div>
+                  </div> -->
+                  <h3> CONNECT WITH US</h3>
+                  <div class="col-md-12">
+                    <ul class="list-inline col-md-offset-2 text-center">
+                        <li class="">
+                            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-facebook"></i></a>
+                        </li class="">
+                        <li class="">
+                            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
 
+                    </ul>
                 </div>
+
             </div>
-          
-   
+            <div class="col-md-4 col-md-offset-1 text-center">
+                     <!--<div class="col-md-4">
+                      <ul class="divider-vertical mobile-hidden">
+                        <li><hr></li>
+                        <li> <div class="circle" > CONNECT WITH US</div></li>
+                        <li><hr></li>
+                      </ul>  
+                  </div> -->
+                  <h3> We love Mobile!</h3>
+                  <div class="col-md-12">
+                      <a href="#"><img width="140" alt="Get it on Google play" src="img/play-store.svg"/></a>
+                   </div>
+                    <div class="col-md-12">
+                      <a href="#"><img width="140" alt="Get it on Google play" src="img/apple-store.svg"/></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-below">
             <div class="container wow fadeIn">
                 <div class="row">
-                    <div class="col-lg-12 col-lg-offset-1">
-                        <ul class="list-inline">
-                            <li><a>About Us</a></li>
-                            <li><a>FAQ</a></li>
-                            <li><a>Feedback</a></li>
-                            <li><a>Terms and Conditions</a></li>  
+                    <div class="col-lg-12 padding-lg">
+                        <ul class="text-center" style=" list-style-type: none;">
+                            <li class="col-sm-3"><a>About Us</a></li>
+                            <li class="col-sm-3" ><a>FAQ</a></li>
+                            <li class="col-sm-3"><a>Feedback</a></li>
+                            <li class="col-sm-3"><a>Terms and Conditions</a></li>  
                         </ul>
                     </div>
                 </div>
@@ -423,7 +420,7 @@
     <!-- LogIn -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-       <div class="modal-content">
+         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title padding-sm">Login</h4>
@@ -431,56 +428,59 @@
 
         <div class="modal-body">
             <!-- The form is placed inside the body of modal -->
-            <form id="form-login" method="post" class="form-horizontal">
-               <div class="form-group">
-                 <label class="col-md-3 control-label">E-mail</label>
-                 <div class="col-md-8">
-                    <input type="text" class="form-control" name="email" />
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="form-login" method="post" class="form-horizontal">
+                     <div class="form-group">
+                       <label class="col-md-3 control-label">E-mail</label>
+                       <div class="col-md-8">
+                        <input type="text" class="form-control" name="email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                   <label class="col-md-3 control-label">Password</label>
+                   <div class="col-md-8">
+                    <input type="password" class="form-control" name="password" />
                 </div>
             </div>
             <div class="form-group">
-             <label class="col-md-3 control-label">Password</label>
-             <div class="col-md-8">
-                <input type="password" class="form-control" name="password" />
-            </div>
-        </div>
-        <div class="form-group">
-         <div class="col-sm-offset-3 col-md-4">
-            <div class="checkbox">
-              <label>
-                 <input type="checkbox"> Remember me
-             </label>
-         </div>
-     </div>
- </div>
- <div class="form-group">
-     <div class="col-md-4 col-md-offset-9">
+               <div class="col-sm-offset-3 col-md-4">
+                <div class="checkbox">
+                  <label>
+                   <input type="checkbox"> Remember me
+               </label>
+           </div>
+       </div>
+   </div>
+   <div class="form-group">
+       <div class="col-md-4 col-md-offset-9">
         <button type="submit" class="btn btn-primary">Login</button>
     </div>
 </div>
 </form>
+</div>
+</div>
+</div>
 <div class="modal-footer">
-<div class="row">
-<div class="col-md-12 ">
-    <h4 class="padding-sm text-center ">Or Sign In With</h4>
-    <ul class="list-inline col-md-offset-1">
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
-        </li>
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-windows"></i></a>
-        </li class="">
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
-        </li>
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-yahoo"></i></a>
-        </li>
-    </ul>
-</div>
-</div>
-</div>
-</div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <h4 class="padding-sm text-center ">Or Sign In With</h4>
+            <ul class="list-inline col-md-offset-1">
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
+                </li>
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-windows"></i></a>
+                </li class="">
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
+                </li>
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-yahoo"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -488,97 +488,94 @@
 
 <!-- Register Modal-->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
- <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h4 class="modal-title padding-sm">Register</h4>
-    </div>
+   <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title padding-sm">Register</h4>
+      </div>
       <div class="modal-body">
         <div class="row">
-
-          <!-- Sign Up Form -->
-          <form id="form-register" method="post" class="form-horizontal">
-            <div class="form-group">
-              <label class="col-md-3 control-label">Name</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" name="name" />
-              </div>
+            <div class="col-md-12">
+              <!-- Sign Up Form -->
+              <form id="form-register" method="post" class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Name</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" name="name" />
+                </div>
             </div>
             <div class="form-group">
-             <label class="col-md-3 control-label">Phone</label>
-             <div class="col-md-8">
+               <label class="col-md-3 control-label">Phone</label>
+               <div class="col-md-8">
                 <input type="text" class="form-control" name="phone" />
-             </div>
             </div>
-            <div class="form-group">
-              <label class="col-md-3 control-label">E-mail</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" name="email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-md-3 control-label">Password</label>
-              <div class="col-md-8">
-                <input type="password" class="form-control" name="password" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-md-4 col-md-offset-9">
-                <button id="register" type="submit" class="btn btn-primary">Register</button>
-              </div>
-            </div>
-        </form> <!-- End Sign Up Form-->
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">E-mail</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" name="email" />
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Password</label>
+      <div class="col-md-8">
+        <input type="password" class="form-control" name="password" />
+    </div>
+</div>
+<div class="form-group">
+  <div class="col-md-4 col-md-offset-9">
+    <button id="register" type="submit" class="btn btn-primary">Register</button>
+</div>
+</div>
+</form> <!-- End Sign Up Form-->
 
 
-      </div>
-
-  <!-- Confirmation (Only shown when register is clicked) -->
-  <div id="form-confirm-style" class="row" style="display:none;">
+</div>
+</div>
+<!-- Confirmation (Only shown when register is clicked) -->
+<div id="form-confirm-style" class="row" style="display:none;">
   <div class="col-md-12  text-center">
     <p> We have sent you a confirmation PIN via SMS and e-mail </p>
-     <form id="form-confirm" method="post" class="form-horizontal" >
-    <div class="form-group">
+    <form id="form-confirm" method="post" class="form-horizontal" >
+        <div class="form-group">
           <div class="col-md-8">
             <input type="text" class="form-control" name="pin" placeholder="Please Enter your PIN."/>
-          </div>
-          <div class="col-md-4">
-            <button type="submit" class="btn btn-primary">Confirm</button>
-          </div>
         </div>
-    </form>
-
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+    </div>
+</form>
 </div>
-</div>
+</div> <!-- Confirmation End -->
 
 <!-- Social Media Sign Up -->
 <div class="modal-footer">
-<div class="row">
-<div class="col-md-12 ">
-    <h4 class="padding-sm text-center ">Or Sign In With</h4>
-    <ul class="list-inline col-md-offset-1">
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
-        </li>
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-windows"></i></a>
-        </li class="">
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
-        </li>
-        <li class="">
-            <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-yahoo"></i></a>
-        </li>
-    </ul>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <h4 class="padding-sm text-center ">Or Sign In With</h4>
+            <ul class="list-inline col-md-offset-1">
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-google-plus"></i></a>
+                </li>
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-windows"></i></a>
+                </li class="">
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-linkedin"></i></a>
+                </li>
+                <li class="">
+                    <a href="#" class="btn-social btn-primary"><i class="fa fa-fw fa-yahoo"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
+</div>
+</div>
+</div>
 
 
 <!-- jQuery Version 1.11.0 -->
@@ -599,40 +596,41 @@
 
 <!-- Custom select dropdown JavaSscript -->
 <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-    <script>
-         $(document).ready(function(){
-          $('.selectpicker').selectpicker({
-            size: 4
-          });
+<script>
+$(document).ready(function(){
+    //Formatting the country dropdown
+  $('.selectpicker').selectpicker({
+    size: 4
+});
 
-        // handle the mouseenter functionality
-        $("img").mouseenter(function(){
+        // handle the mouseenter animation on images
+        $(".jump").mouseenter(function(){
             $(this).addClass("bounce animated");
         })
-        // handle the mouseleave functionality
+        // handle the mouseleave animation on images
         .mouseleave(function(){
             $(this).removeClass("bounce animated");
         });
-    
+
 
     });
-    </script>
+</script>
 <!-- Custom viewport checker JavaScript -->
 <script src="js/wow.min.js"></script>
 
 <script>
-    new WOW().init();
+new WOW().init();
 </script>
 
 <!-- Custom change image on country JavaScript -->
 <script>
- $(document).ready(function() {
-   $("#country").change(onSelectChange);
+$(document).ready(function() {
+ $("#country").change(onSelectChange);
 
- });
+});
 
 
- function onSelectChange() {
+function onSelectChange() {
   var selected = $("#country option:selected");
   var output = ""; 
 
@@ -642,71 +640,71 @@
   countryValues['Sri Lanka'] = ['srilanka-01.jpg','SLR', '120.00 SLR'];
   countryValues['London'] = ['london.jpg', 'EUR', '1.5 EUR'];  // same as for other values
   $('header').removeClass("fadeIn animated");
-    if(selected.val() == 'PLEASE CHOOSE A COUNTRY'){
+  if(selected.val() == 'PLEASE CHOOSE A COUNTRY'){
       output = "You have not selected a country."  
       $('header').css('background', 'url(img/london.png) no-repeat fixed center center / cover  rgba(0, 0, 0, 0)');
-    }
-    else{
+  }
+  else{
       output = "The current exchange rate is 1 CAD = " +  countryValues[selected.val()][2];
       $("header").removeClass('fadeIn animated');
       $('header').css('background', 'url("img/'+ countryValues[selected.val()][0]+'") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)'); 
       $('#currency-sym').text( countryValues[selected.val()][1]) 
       setTimeout(function(){
-            $("header").addClass('fadeIn animated');
-            $(".step-2").css('visibility', 'visible');
-          },1);
-  
+        $("header").addClass('fadeIn animated');
+        $(".step-2").css('visibility', 'visible');
+    },1);
+
       
-    } 
+  } 
 
-    $("#exchange-rate").html(output);
-  }
-  
+  $("#exchange-rate").html(output);
+}
 
-  </script>
+
+</script>
 
 
 
 <!-- Form validation-->
 
 <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#form-login').bootstrapValidator({
-            fields: {
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The email address is required and cannot be empty'
-                        },
-                        emailAddress: {
-                            message: 'The email address is not a valid'
-                        }
+<script>
+$(document).ready(function() {
+    $('#form-login').bootstrapValidator({
+        fields: {
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required and cannot be empty'
+                    },
+                    emailAddress: {
+                        message: 'The email address is not a valid'
                     }
-                },
-              
-                password: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The password is required and cannot be empty'
-                        },
-                        different: {
-                            field: 'username',
-                            message: 'The password cannot be the same as username'
-                        },
-                        stringLength: {
-                            min: 8,
-                            message: 'The password must have at least 8 characters'
-                        }
+                }
+            },
+
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and cannot be empty'
+                    },
+                    different: {
+                        field: 'username',
+                        message: 'The password cannot be the same as username'
+                    },
+                    stringLength: {
+                        min: 8,
+                        message: 'The password must have at least 8 characters'
                     }
                 }
             }
-            }
-        );
+        }
+    }
+    );
 
         //Register Form Validation
 
-         $('#form-register').bootstrapValidator({
+        $('#form-register').bootstrapValidator({
             // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
 
             fields: {
@@ -716,7 +714,7 @@
                         notEmpty: {
                             message: 'The name is required and cannot be empty'
                         },
-                      
+
                         regexp: {
                             regexp: /^[a-zA-Z]+$/,
                             message: 'The username can only consist of alphabetical letters'
@@ -724,7 +722,7 @@
                     }
                 },
 
-               
+
                 email: {
                     validators: {
                         notEmpty: {
@@ -762,14 +760,13 @@
                     }
                 }
             }
-            }
+        }
         );
 
     // Currency Validation
-
-        $('#form-init').bootstrapValidator({
+    $('#form-init').bootstrapValidator({
             // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-
+            container: '#messages',
             fields: {
                 currency: {
                     validators: {
@@ -783,29 +780,30 @@
                     }
                 }
             }
-            }
+        }
         );
+  
 
     // Transaction ID Validation
-        $('#form-track').bootstrapValidator({
-             fields: {
-                transid: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Transaction ID cannot be empty.'
-                        },
-                        regexp: {
-                            regexp: /^[0-9]+$/,
-                            message: 'The transaction ID must be a 15 digit number.'
-                        }
-                    }
+    $('#form-track').bootstrapValidator({
+       fields: {
+        transid: {
+            validators: {
+                notEmpty: {
+                    message: 'Transaction ID cannot be empty.'
+                },
+                regexp: {
+                    regexp: /^[0-9]+$/,
+                    message: 'The transaction ID must be a 15 digit number.'
                 }
             }
-            }
-        );
-    });
-    </script>
-    <!-- End Form Validation -->
+        }
+    }
+}
+);
+});
+</script>
+<!-- End Form Validation -->
 </body>
 
 </html>
